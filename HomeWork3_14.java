@@ -9,6 +9,8 @@ class HomeWork3_14 {
 	*/
 	Scanner input = new Scanner(System.in);
 	int currentRound = 1;
+	int wins = 0;
+	int losses = 0;
 	char H = '0';
 	char T = '1';
 
@@ -23,20 +25,28 @@ class HomeWork3_14 {
 	  int number1 = (int)(Math.random() * 10);
 	  int answer = number1 % 2;
 
-	  if(guess == 'H' && answer == 0)
+	  if(guess == 'H' && answer == 0){
 	  System.out.println("It was heads, so you guessed right!");
-	  if(guess == 'T' && answer == 1)
+	  wins++;
+	  }
+	  if(guess == 'T' && answer == 1){
 	  System.out.println("It was tails, so you guessed right!");
-	  if(guess == 'H' && answer == 1)
+	  wins++;
+	  }
+	  if(guess == 'H' && answer == 1){
 	  System.out.println("It was tails, so you guessed wrong!");
-	  if(guess == 'T' && answer == 0)
+	  losses++;
+	  }
+	  if(guess == 'T' && answer == 0){
 	  System.out.println("It was heads, so you guessed wrong!");
+	  losses++;
+	  }
 	  if(guess != 'T' && guess != 'H'){
 	  System.out.println("You had TWO options!");
 	  System.exit(1);
 	  }
 	  currentRound++;
 	}
-
+	System.out.println("You won " + wins + " times, and lost " + losses + " times.");
 	}
 }
