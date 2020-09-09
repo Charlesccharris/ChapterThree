@@ -17,7 +17,6 @@ class HomeWork3_14 {
 	System.out.print("Number of rounds: ");
 	int totalRounds = input.nextInt();
 
-
 	while(currentRound <= totalRounds){
 
 	  System.out.print("(H)eads or (T)ails: ");
@@ -47,6 +46,13 @@ class HomeWork3_14 {
 	  }
 	  currentRound++;
 	}
-	System.out.println("You won " + wins + " times, and lost " + losses + " times.");
+
+	System.out.print("\nYou won " + wins + " times, and lost " + losses + " times. ");
+	if(wins > losses)
+	System.out.println("You got lucky.");
+	if(losses > wins)
+	System.out.println("Guess today's just not your lucky day.");
+	if(losses == wins)
+	System.out.println("");
 	}
 }
