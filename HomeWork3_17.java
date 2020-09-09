@@ -16,6 +16,9 @@ class HomeWork3_17{
 	int tied = 0;
 	int won = 0;
 	int lost = 0;
+	char S = '0';
+	char R = '1';
+	char P = '2';
 
 	System.out.print("How many rounds: ");
 	int rounds = input.nextInt();
@@ -24,24 +27,26 @@ class HomeWork3_17{
 	System.out.println("Round " + currentRound);
 	int number1 = (int)(Math.random() * 10);
 	int computerHand = number1 % 3;
-	System.out.print("Type (0) for scissors, (1) for rock, and (2) for paper: ");
-	int guess = input.nextInt();
-		if(guess > 2){
+	System.out.print("(R)ock, (P)aper, or (S)cissors: ");
+
+	//This is what I used for letter inputs
+	char guess = input.next().charAt(0);
+		if(guess != 'R' && guess != 'P' && guess !='S'){
 		System.out.println("Really, " + guess + "? You had one job.");
 		currentRound = rounds;
 		System.exit(1);
 		}
 		if(computerHand == 0){
 		System.out.print("Computer tossed scissors, ");
-			if(guess == 0){
+			if(guess == 'S'){
 			System.out.println("so you tied");
 			tied ++;
 			}
-			if(guess == 1){
+			if(guess == 'R'){
 			System.out.println("so you won");
 			won ++;
 			}
-			if(guess == 2){
+			if(guess == 'P'){
 			System.out.println("so you lost");
 			lost ++;
 			}
@@ -49,15 +54,15 @@ class HomeWork3_17{
 		}
 		if(computerHand == 1){
 		System.out.print("Computer tossed rock, ");
-			if(guess == 0){
+			if(guess == 'S'){
 			System.out.println("so you lost");
                         lost ++;
 			}
-			if(guess == 1){
+			if(guess == 'R'){
 			System.out.println("so you tied");
                         tied ++;
 			}
-			if(guess == 2){
+			if(guess == 'P'){
 			System.out.println("so you won");
                         won ++;
 			}
@@ -65,15 +70,15 @@ class HomeWork3_17{
 		}
 		if(computerHand == 2){
 		System.out.print("Computer tossed paper, ");
-			if(guess == 0){
+			if(guess == 'S'){
 			System.out.println("so you won");
                         won ++;
 			}
-			if(guess == 1){
+			if(guess == 'R'){
 			System.out.println("so you lost");
                         lost ++;
 			}
-			if(guess == 2){
+			if(guess == 'P'){
 			System.out.println("so you tied");
                         tied ++;
 			}
