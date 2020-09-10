@@ -16,7 +16,7 @@ class HomeWork3_14 {
 		int game = input.nextInt();
 	switch(game){
 		case 1:
-			System.out.print("Number of rounds: ");
+			System.out.print("Number of coin flips: ");
 			int totalRounds = input.nextInt();
 
 			while(currentRound <= totalRounds){

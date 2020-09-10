@@ -16,11 +16,8 @@ class HomeWork3_17{
 	int tied = 0;
 	int won = 0;
 	int lost = 0;
-	char S = '0';
-	char R = '1';
-	char P = '2';
 
-	System.out.print("How many rounds: ");
+	System.out.print("Number of Rock, Paper, Scissor rounds: ");
 	int rounds = input.nextInt();
 
 	while(currentRound <= rounds){
