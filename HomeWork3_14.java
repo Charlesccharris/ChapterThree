@@ -48,34 +48,43 @@ class HomeWork3_14 {
 			  }
 			  currentRound++;
 			}
+		System.out.print("\nYou won " + wins + " times, and lost " + losses + " times. ");
+		if(wins > losses)
+		System.out.println("You got lucky.");
+		if(losses > wins)
+		System.out.println("Guess today's just not your lucky day.");
+		if(losses == wins)
+		System.out.println("");		
+
 		case 2:
+			System.out.println("Numbers 0 - 13, how many can you get right?");
 			while(losses < 1){
-				int newNumber = (int)(Math.random() * 100 % 14);
 				System.out.print("The current number is " + newNumber + 
-						 "is the next number going to be higher or lower: ")
+						 " is the next number going to be (H)igher or (L)ower: ");
 				int guessTwo = input.next().charAt(0);
 				int oldNumber = newNumber;
-				int newNumber = (int)(Math.random() * 100 % 14);
-				if(oldNumber < newNumber && guessTwo == 'H')
-					System.out.println("The new number was higher, so you guessed correct.");
+				newNumber = (int)(Math.random() * 100 % 14);
+				if(guessTwo != 'H' && guessTwo != 'L')
+					System.exit(1);
+				if(oldNumber < newNumber && guessTwo == 'H'){
+					System.out.println("The new number was "+ newNumber + " which was higher, so you guessed correct.\n");
+					wins++;
+				}
 				if(oldNumber > newNumber && guessTwo == 'H'){
-					System.out.println("The new number was lower, so you guessed wrong.");
+					System.out.println("The new number was " + newNumber + " which was lower, so you guessed wrong.\n");
 					losses++;
 				}
 				if(oldNumber < newNumber && guessTwo == 'L'){
-					System.out.println("The new number was higher, so you guessed wrong.");
-					lossess++;	
+					System.out.println("The new number was " + newNumber + " which was higher, so you guessed wrong.\n");
+					losses++;
 				}
-				if(oldNumber > newNumber && guessTwo == 'L')
-					System.out.println("The new number was higher, so you guessed correct.");
+				if(oldNumber > newNumber && guessTwo == 'L'){
+					System.out.println("The new number was " + newNumber + " which was lower, so you guessed correct.\n");
+					wins++;
+				}
+				if(oldNumber == newNumber)
+					System.out.println("It was the same number.\n");
 			}
-	}
-	System.out.print("\nYou won " + wins + " times, and lost " + losses + " times. ");
-	if(wins > losses)
-	System.out.println("You got lucky.");
-	if(losses > wins)
-	System.out.println("Guess today's just not your lucky day.");
-	if(losses == wins)
-	System.out.println("");
+			System.out.println("\nYou got " + wins + " rounds in a row");
 	}
 }
