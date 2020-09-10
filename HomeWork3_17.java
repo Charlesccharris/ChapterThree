@@ -31,6 +31,7 @@ class HomeWork3_17{
 
 	//This is what I used for letter inputs
 	char guess = input.next().charAt(0);
+
 		if(guess != 'R' && guess != 'P' && guess !='S'){
 		System.out.println("Really, " + guess + "? You had one job.");
 		currentRound = rounds;
@@ -52,7 +53,7 @@ class HomeWork3_17{
 			}
 		currentRound ++;
 		}
-		if(computerHand == 1){
+		else if(computerHand == 1){
 		System.out.print("Computer tossed rock, ");
 			if(guess == 'S'){
 			System.out.println("so you lost");
@@ -68,7 +69,7 @@ class HomeWork3_17{
 			}
 		currentRound ++;
 		}
-		if(computerHand == 2){
+		else if(computerHand == 2){
 		System.out.print("Computer tossed paper, ");
 			if(guess == 'S'){
 			System.out.println("so you won");

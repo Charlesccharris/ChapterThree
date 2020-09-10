@@ -11,8 +11,6 @@ class HomeWork3_14 {
 	int currentRound = 1;
 	int wins = 0;
 	int losses = 0;
-	char H = '0';
-	char T = '1';
 
 	System.out.print("Number of rounds: ");
 	int totalRounds = input.nextInt();
@@ -54,5 +52,6 @@ class HomeWork3_14 {
 	System.out.println("Guess today's just not your lucky day.");
 	if(losses == wins)
 	System.out.println("");
+
 	}
 }
