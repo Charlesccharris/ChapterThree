@@ -11,9 +11,6 @@ class HomeWork3_14 {
 	int currentRound = 1;
 	int wins = 0;
 	int losses = 0;
-	char H = '0';
-	char T = '1';
-	char L = '2';
 
 	System.out.print("Type (1) for coin flip, or (2) for Higher or lower");
 		int game = input.nextInt();
